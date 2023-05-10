@@ -1,6 +1,8 @@
+import { useSelector } from 'react-redux';
+//  import { addBook, removeBook } from '../redux/books/booksSlice';
 import Book from './Book';
 
-const books = [
+/* const books = [
   {
     id: 1,
     title: 'Book1',
@@ -15,14 +17,17 @@ const books = [
     status: '15%',
     chapter: 'Some Chapter Book2',
   },
-];
+]; */
 
-const BooksList = () => (
-  <div>
-    {books.map((book) => (
-      <Book key={book.id} book={book} />
-    ))}
-  </div>
-);
+const BooksList = () => {
+  const { books } = useSelector((store) => store.books);
+  return (
+    <div>
+      {books.map((book) => (
+        <Book key={book.item_id} book={book} />
+      ))}
+    </div>
+  );
+};
 
 export default BooksList;
