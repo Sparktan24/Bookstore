@@ -144,14 +144,12 @@ Give a ⭐️ if you like this project!
 
 <!-- ACKNOWLEDGEMENTS -->
 
-<!-- ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank... 
+I would like to thank Microverse for providing the initial wireframe to build this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
--->
+
 <!-- FAQ (optional) -->
 
 ## ❓ FAQ<a name="faq"></a>
