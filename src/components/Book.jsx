@@ -1,12 +1,23 @@
 import React from 'react';
+import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { getBooks } from '../redux/books/booksSlice';
 
 const Book = ({ book }) => {
-  const {
-    item_id, title, author, category,
-  } = book;
+  const [item_id, [bookObj]] = book;
+  const { title, author, category } = bookObj;
+
   const dispatch = useDispatch();
+
+  const handleRemoveBook = (id) => {
+    axios
+      .delete(
+        `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/hJLD5bnJVUBuazb5SvIz/books/${id}`,
+      )
+      .then(() => {
+        dispatch(getBooks());
+      });
+  };
   return (
     <div>
       <h1>
@@ -20,7 +31,7 @@ const Book = ({ book }) => {
         ,
         {category}
       </p>
-      <button type="button" onClick={() => dispatch(removeBook(item_id))}>
+      <button type="button" onClick={() => handleRemoveBook(item_id)}>
         Delete
       </button>
     </div>
