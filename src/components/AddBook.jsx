@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { nanoid } from 'nanoid';
+import { addBook, getBooks } from '../redux/books/booksSlice';
 
 const AddBook = () => {
-  let title = '';
-  let author = '';
-  const item_id = 'temporary';
+  //  const { books } = useSelector((store) => store.books);
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+
+  const item_id = nanoid();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getBooks());
+  }, [dispatch]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,9 +21,14 @@ const AddBook = () => {
       item_id,
       title,
       author,
-      category: 'not defined yet',
+      category: 'Action',
     };
-    dispatch(addBook(bookObj));
+
+    dispatch(addBook(bookObj)).then(() => {
+      setTitle('');
+      setAuthor('');
+      dispatch(getBooks());
+    });
   };
 
   return (
@@ -24,18 +36,18 @@ const AddBook = () => {
       <h2>Add a new Book</h2>
       <form onSubmit={handleSubmit}>
         <input
-          id="title"
+          value={title}
           type="text"
           name="title"
           placeholder="Title"
-          onChange={(e) => { title = e.target.value; }}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <input
-          id="author"
+          value={author}
           type="text"
           name="author"
           placeholder="Author"
-          onChange={(e) => { author = e.target.value; }}
+          onChange={(e) => setAuthor(e.target.value)}
         />
         <button type="submit">Add book</button>
       </form>
