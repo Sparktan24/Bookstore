@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../styles/navBar.css';
+import { HiOutlineUserCircle } from 'react-icons/hi';
 //  import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => (
@@ -13,6 +14,9 @@ const NavBar = () => (
         <Link to="categories" activeclassname="active">Categories</Link>
       </li>
     </ul>
+    <div className="userIcon">
+      <HiOutlineUserCircle />
+    </div>
   </nav>
 );
 

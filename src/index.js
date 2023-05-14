@@ -11,7 +11,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <div className="app-wrap">
+          <App />
+        </div>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,

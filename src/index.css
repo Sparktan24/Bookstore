@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 :root {
   --bubble-gum-pink: #ff5ab7;
   --black: #1e1e1e;
@@ -12,4 +14,10 @@
   height: 89.625rem;
   padding: 9.313rem 3.75rem 7.688rem 6.25rem;
   background-color: var(--pale-grey);
+}
+
+.app-wrap {
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fafafa;
 }

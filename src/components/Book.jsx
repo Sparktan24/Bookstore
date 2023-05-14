@@ -25,23 +25,34 @@ const Book = ({ book }) => {
         <p className="category">{category}</p>
         <h2 className="title">{title}</h2>
         <h3 className="author">{author}</h3>
-        <button className="bookButton" type="button">Comments</button>
-        <button type="button" className="bookButton" onClick={() => handleRemoveBook(item_id)}>
-        Remove
-      </button>
+        <button className="bookButton line" type="button">
+          Comments
+        </button>
+        <button
+          type="button"
+          className="bookButton line"
+          onClick={() => handleRemoveBook(item_id)}
+        >
+          Remove
+        </button>
+        <button className="bookButton" type="button">
+          Edit
+        </button>
       </div>
       <div className="progress">
-              <div className="circle" />
-              <div className="percent">
-                <h2 className="percent-number">8%</h2>
-                <p className="percent-text">Completed</p>
-              </div>
-            </div>
-            <div className="chapterCont">
-              <p className="current">CURRENT CHAPTER</p>
-              <p className="chapter">Introduction</p>
-              <button className="update" type="button">UPDATE PROGRESS</button>
-            </div>
+        <div className="circle" />
+        <div className="percent">
+          <h2 className="percent-number">10%</h2>
+          <p className="percent-text">Completed</p>
+        </div>
+      </div>
+      <div className="chapterCont">
+        <p className="current">CURRENT CHAPTER</p>
+        <p className="chapter">Introduction</p>
+        <button className="update" type="button">
+          UPDATE PROGRESS
+        </button>
+      </div>
     </li>
   );
 };
