@@ -40,13 +40,13 @@
 
 .bookButton {
   font-family: RobotoSlab, sans-serif;
-    font-size: 0.875rem;
-    font-weight: 300;
-    color: #4386bf;
-    border: none;
-    background-color: transparent;
-    padding: 1rem 1rem 1rem 0;
-    cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #4386bf;
+  border: none;
+  background-color: transparent;
+  padding: 1rem 1rem 1rem 0;
+  cursor: pointer;
 }
 
 .bookButton:active {
