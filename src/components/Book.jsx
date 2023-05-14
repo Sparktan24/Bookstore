@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { getBooks } from '../redux/books/booksSlice';
+import '../styles/Book.css';
 
 const Book = ({ book }) => {
   const [item_id, [bookObj]] = book;
@@ -19,22 +20,29 @@ const Book = ({ book }) => {
       });
   };
   return (
-    <div>
-      <h1>
-        Book
-        {title}
-      </h1>
-      By
-      {author}
-      <p>
-        {item_id}
-        ,
-        {category}
-      </p>
-      <button type="button" onClick={() => handleRemoveBook(item_id)}>
-        Delete
+    <li className="bookCont">
+      <div className="book">
+        <p className="category">{category}</p>
+        <h2 className="title">{title}</h2>
+        <h3 className="author">{author}</h3>
+        <button className="bookButton" type="button">Comments</button>
+        <button type="button" className="bookButton" onClick={() => handleRemoveBook(item_id)}>
+        Remove
       </button>
-    </div>
+      </div>
+      <div className="progress">
+              <div className="circle" />
+              <div className="percent">
+                <h2 className="percent-number">8%</h2>
+                <p className="percent-text">Completed</p>
+              </div>
+            </div>
+            <div className="chapterCont">
+              <p className="current">CURRENT CHAPTER</p>
+              <p className="chapter">Introduction</p>
+              <button className="update" type="button">UPDATE PROGRESS</button>
+            </div>
+    </li>
   );
 };
 
