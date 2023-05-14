@@ -1,4 +1,5 @@
 .navCont {
+  font-family: Montserrat, sans-serif;
   background-color: rgb(255, 255, 255);
   display: flex;
   color: rgb(0, 0, 0);
@@ -10,11 +11,14 @@
 }
 
 .navTitle {
+  font-weight: bold;
   color: #0290ff;
   margin: 0 2rem 0 3rem;
 }
 
 .navUl {
+  color: #121212;
+  letter-spacing: 1.9px;
   list-style: none;
   margin: 0;
   padding: 0;

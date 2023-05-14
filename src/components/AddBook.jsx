@@ -5,7 +5,6 @@ import { addBook, getBooks } from '../redux/books/booksSlice';
 import '../styles/AddBook.css';
 
 const AddBook = () => {
-  //  const { books } = useSelector((store) => store.books);
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');

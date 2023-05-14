@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import '../styles/navBar.css';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { HiOutlineUserCircle } from 'react-icons/hi';
-//  import styles from '../styles/NavBar.module.css';
 
 const NavBar = () => (
   <nav className="navCont">
